@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>GraphtTilt</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+    <body>
+        <nav><h1>Graphtilt</h1></nav>
+        <div class="page">
+            <input placeholder="Code" onchange="startGame(this.value, this)">
+            <button style="float: right" onclick="startGame(this.parentElement.getElementsByTagName('input')[0].value, this.parentElement.getElementsByTagName('input')[0])">Continue</button>
+        </div>
+
+        <div class="page">
+            <input placeholder="Nickname" onchange="addPlayer(this.value, this)">
+            <button style="float: right" onclick="addPlayer(this.parentElement.getElementsByTagName('input')[0].value, this.parentElement.getElementsByTagName('input')[0])">Continue</button>
+        </div>
+
+        <div class="page">
+            <h1>Waiting</h1>
+        </div>
+
+        <!-- Firebase App is always required and must be first -->
+        <script src="https://www.gstatic.com/firebasejs/5.5.5/firebase-app.js"></script>
+
+        <!-- Add additional services that you want to use -->
+        <script src="https://www.gstatic.com/firebasejs/5.5.5/firebase-auth.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/5.5.5/firebase-database.js"></script>
+        <script src="db.js"></script>
+        <script src="main.js"></script>
+    </body>
+</html>
