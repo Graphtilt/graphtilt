@@ -11,6 +11,7 @@
 body {
     margin: 0px;
     background-image: url(Graph.png);
+    overflow: hidden;
 }
 
 h1 {
