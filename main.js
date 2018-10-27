@@ -46,7 +46,7 @@ function addPlayer(nickname) {
         firebase.database().ref("games/" + (window.location.href.split("?")[1] ? window.location.href.split("?")[1] : gameCode) + "/players/" + nickname).set(localStorage.ip).then(function() {
             nextPage();
         }).catch(function(error) {
-            throw error;
+            alert("A player with this name already exists");
         });
     }
 }
