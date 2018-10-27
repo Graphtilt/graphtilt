@@ -24,6 +24,7 @@ function startGame(gameId, input) {
             if(input) {
                 gameCode = input.value;
                 input.style.borderBottom = "3px solid green";
+                window.history.pushState("object or string", "Title", "?" + gameId);
                 nextPage();
             }
         } else {
@@ -39,11 +40,13 @@ function startGame(gameId, input) {
 }
 
 function addPlayer(nickname) {
-    firebase.database().ref("games/" + gameCode + "/players/" + nickname).set(localStorage.ip).then(function() {
-        nextPage();
-    }).catch(function(error) {
-        throw error;
-    });
+    if(window.location.href.split("?")[1] || gameCode) {
+        firebase.database().ref("games/" + (window.location.href.split("?")[1] ? window.location.href.split("?")[1] : gameCode) + "/players/" + nickname).set(localStorage.ip).then(function() {
+            nextPage();
+        }).catch(function(error) {
+            throw error;
+        });
+    }
 }
 
 function createGame(questions, answers) {
