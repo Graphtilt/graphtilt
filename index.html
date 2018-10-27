@@ -5,20 +5,11 @@
         <link rel="stylesheet" type="text/css" href="style.css">
     </head>
     <body>
-        <nav><h1>Graphtilt</h1></nav>
-        <div class="page">
-            <input placeholder="Code" onchange="startGame(this.value, this)">
-            <button style="float: right" onclick="startGame(this.parentElement.getElementsByTagName('input')[0].value, this.parentElement.getElementsByTagName('input')[0])">Continue</button>
-        </div>
+        <nav>
+            <h1>Graphtilt</h1>
+        </nav>
 
-        <div class="page">
-            <input placeholder="Nickname" onchange="addPlayer(this.value, this)">
-            <button style="float: right" onclick="addPlayer(this.parentElement.getElementsByTagName('input')[0].value, this.parentElement.getElementsByTagName('input')[0])">Continue</button>
-        </div>
-
-        <div class="page">
-            <h1>Waiting</h1>
-        </div>
+        <h1>Welcome to Graphtilt</h1>
 
         <!-- Firebase App is always required and must be first -->
         <script src="https://www.gstatic.com/firebasejs/5.5.5/firebase-app.js"></script>
