@@ -6,7 +6,7 @@ if(localStorage.ip == undefined) {
 
 function pageOn() {
     for(var i = 0; i < document.getElementsByClassName("page").length; i++) {
-        if(document.getElementsByClassName("page")[i].style.transform = 'none') {
+        if(document.getElementsByClassName("page")[i].style.transform == 'none') {
             return i;
         }
         return false;
@@ -14,8 +14,10 @@ function pageOn() {
 }
 
 function nextPage() {
-    document.getElementsByClassName("page")[pageOn() + 1].style.transform = "none";
-    document.getElementsByClassName("page")[pageOn()].style.transform = "translateX(-200%)";
+    if(document.getElementsByClassName("page")[pageOn() + 1]) {
+        document.getElementsByClassName("page")[pageOn() + 1].style.transform = 'none';
+        document.getElementsByClassName("page")[pageOn()].style.transform = "translateX(-200%)";
+    }
 }
 
 function startGame(gameId, input) {
